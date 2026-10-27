@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0b0d">
+<title>บ้านจุฑาเศรษฐี | ต้นแบบ</title>
+<style>
+:root{--bg:#09090b;--panel:#151518;--panel2:#1d1d21;--gold:#e7bd62;--gold2:#f8dfa0;--muted:#aaa7a0;--line:#343238;--green:#8fd4a4}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#242016 0,#09090b 42%);color:#f7f4ed;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh}
+button,input,select{font:inherit}button{cursor:pointer}.app{max-width:520px;margin:auto;min-height:100vh;padding-bottom:92px}
+header{padding:22px 18px 16px;border-bottom:1px solid #383027;background:#0b0b0ddd;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}
+.brand{display:flex;align-items:center;gap:12px}.seal{width:48px;height:48px;border:1.5px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:23px;background:linear-gradient(145deg,#292116,#080808);box-shadow:0 0 18px #d4a94b22}
+h1{font-size:18px;margin:0;color:var(--gold2);letter-spacing:.2px}.sub{font-size:12px;color:var(--muted);margin-top:3px}.demo{margin-left:auto;font-size:10px;color:#1a1710;background:var(--gold);border-radius:20px;padding:5px 8px;font-weight:800;white-space:nowrap}
+main{padding:16px}.welcome{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:3px 0 16px}.welcome h2{font-size:21px;margin:0 0 3px}.welcome p{margin:0;color:var(--muted);font-size:13px}
+.avatar{width:42px;height:42px;border-radius:14px;background:#2a2418;border:1px solid #65512b;color:var(--gold2);display:grid;place-items:center;font-weight:800}
+.card{background:linear-gradient(135deg,#1c1a16,#141416 68%);border:1px solid #3c3426;border-radius:18px;padding:16px;margin-bottom:13px;box-shadow:0 8px 26px #0003}.card h3{font-size:15px;margin:0 0 12px;color:var(--gold2)}
+.hero{background:linear-gradient(120deg,#2d2414,#15130f 58%,#171719);position:relative;overflow:hidden}.hero:after{content:"✦";position:absolute;right:18px;top:4px;color:#d5ad55;opacity:.15;font-size:100px}.eyebrow{font-size:12px;color:var(--gold);font-weight:700}.hero h2{font-size:24px;margin:7px 0}.hero p{font-size:13px;color:#c7c0b2;margin:0 0 13px;max-width:280px}.pill{display:inline-block;border:1px solid #7a6335;color:var(--gold2);border-radius:30px;padding:6px 10px;font-size:11px}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.stat{background:#111113;border:1px solid var(--line);border-radius:14px;padding:13px}.stat .label{font-size:11px;color:var(--muted)}.stat .value{font-size:21px;color:var(--gold2);font-weight:800;margin-top:5px}.stat small{font-size:11px;color:var(--muted)}
+.section-head{display:flex;justify-content:space-between;align-items:center;margin:20px 2px 10px}.section-head h3{margin:0;font-size:16px}.link{border:0;background:none;color:var(--gold);font-size:12px}
+.lottery-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.lottery{background:#151518;border:1px solid #383238;border-radius:15px;padding:13px;text-align:left;color:#fff;min-height:105px}.lottery:focus,.lottery.active{border-color:var(--gold);background:#211c12}.lottery .flag{font-size:20px}.lottery strong{display:block;margin:7px 0 3px;font-size:14px}.lottery small{color:var(--muted);font-size:11px}
+.primary{background:linear-gradient(135deg,#f3d98e,#c89b3e);color:#17120a;border:0;border-radius:12px;padding:12px 14px;font-weight:800;width:100%;box-shadow:0 5px 14px #c69b3e22}.secondary{background:#222125;color:var(--gold2);border:1px solid #51452d;border-radius:11px;padding:10px 12px;font-weight:700}.row{display:flex;gap:9px;align-items:center}.row>*{flex:1;min-width:0}
+label{display:block;font-size:12px;color:#c9c2b4;margin:10px 0 6px}input,select{width:100%;background:#0d0d0f;color:#f7f4ed;border:1px solid #444047;border-radius:10px;padding:12px;outline:none}input:focus,select:focus{border-color:var(--gold)}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}table{border-collapse:collapse;width:100%;font-size:12px;min-width:350px}th,td{text-align:left;padding:11px 10px;border-bottom:1px solid #302e33}th{color:var(--gold2);background:#211d16;font-weight:700}td{color:#e8e4db}tr:last-child td{border-bottom:0}.tag{display:inline-block;font-size:10px;padding:4px 7px;border-radius:20px;background:#27241c;color:var(--gold2);border:1px solid #51452d}.tag.green{color:var(--green);background:#132118;border-color:#294c33}
+.history-item{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid #302e33}.history-item:last-child{border:0}.history-item strong{font-size:13px}.history-item p{font-size:11px;color:var(--muted);margin:4px 0 0}.history-item .right{text-align:right;white-space:nowrap}.empty{padding:20px;text-align:center;color:var(--muted);font-size:13px}
+nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(520px,100%);display:grid;grid-template-columns:repeat(5,1fr);gap:2px;padding:9px 7px calc(9px + env(safe-area-inset-bottom));background:#101012f2;border-top:1px solid #393238;backdrop-filter:blur(14px);z-index:10}
+nav button{border:0;background:none;color:#aaa6a0;font-size:10px;padding:6px 0;border-radius:10px}nav button span{display:block;font-size:19px;margin-bottom:3px}nav button.active{color:var(--gold2);background:#292216}
+.view{display:none}.view.active{display:block}.notice{font-size:11px;color:#bfb7a6;line-height:1.6;background:#171611;border:1px solid #413824;border-radius:12px;padding:11px;margin-top:12px}
+.toast{position:fixed;left:50%;bottom:98px;transform:translate(-50%,20px);background:#f2d58a;color:#18130a;padding:11px 15px;border-radius:12px;font-size:13px;font-weight:700;opacity:0;transition:.2s;z-index:20;pointer-events:none;max-width:90%;text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}
+.profile-row{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid #302e33;font-size:13px}.profile-row:last-child{border:0}.muted{color:var(--muted)}.danger{color:#ffb5a9}
+@media(min-width:520px){body{padding:18px 0}.app{border:1px solid #29272b;border-radius:24px;overflow:hidden;min-height:calc(100vh - 36px)}nav{bottom:18px;border-radius:0 0 24px 24px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header><div class="brand"><div class="seal">๙</div><div><h1>บ้านจุฑาเศรษฐี</h1><div class="sub">ระบบสมาชิก · จัดการรายการอย่างเป็นระเบียบ</div></div><span class="demo">DEMO</span></div></header>
+<main>
+<section id="home" class="view active">
+ <div class="welcome"><div><h2>สวัสดีค่ะ 👋</h2><p>ยินดีต้อนรับสู่บ้านจุฑาเศรษฐี</p></div><div class="avatar">จ.</div></div>
+ <div class="card hero"><div class="eyebrow">ยินดีต้อนรับสมาชิก</div><h2>บ้านจุฑาเศรษฐี</h2><p>ดูรายการ บันทึกโพยตัวอย่าง และติดตามประวัติได้ในที่เดียว</p><span class="pill">✦ โทนดำทองพรีเมียม</span></div>
+ <div class="stats"><div class="stat"><div class="label">รายการที่บันทึกในเครื่อง</div><div class="value" id="statCount">0</div><small>รายการตัวอย่าง</small></div><div class="stat"><div class="label">ยอดรวมโพยตัวอย่าง</div><div class="value" id="statTotal">฿0</div><small>ไม่ใช่ธุรกรรมเงินจริง</small></div></div>
+ <div class="section-head"><h3>รายการหวย</h3><button class="link" onclick="showView('lottery')">ดูทั้งหมด →</button></div>
+ <div class="lottery-grid"><button class="lottery" onclick="selectLottery('ลาวเวียงจันทร์')"><span class="flag">🇱🇦</span><strong>ลาวเวียงจันทร์</strong><small>รายการสาธิต</small></button><button class="lottery" onclick="selectLottery('ลาวพัฒนา')"><span class="flag">🇱🇦</span><strong>ลาวพัฒนา</strong><small>รายการสาธิต</small></button></div>
+ <div class="notice">ℹ️ ต้นแบบเพื่อทดลองใช้งานเท่านั้น ข้อมูลเป็นข้อมูลสาธิต ไม่มีการรับเงิน โอนเงิน หรือจ่ายเงินอัตโนมัติ</div>
+</section>
+<section id="lottery" class="view">
+ <div class="section-head"><h3>รายการหวย</h3><span class="tag">สาธิต</span></div>
+ <div class="lottery-grid"><button class="lottery active" id="lot-lao-v" onclick="selectLottery('ลาวเวียงจันทร์')"><span class="flag">🇱🇦</span><strong>ลาวเวียงจันทร์</strong><small>เลือกเพื่อบันทึกรายการ</small></button><button class="lottery" id="lot-lao-p" onclick="selectLottery('ลาวพัฒนา')"><span class="flag">🇱🇦</span><strong>ลาวพัฒนา</strong><small>เลือกเพื่อบันทึกรายการ</small></button><button class="lottery" onclick="selectLottery('หวยตัวอย่าง 3 ตัว')"><span class="flag">🎟️</span><strong>หวยตัวอย่าง 3 ตัว</strong><small>สำหรับทดลองหน้าจอ</small></button><button class="lottery" onclick="selectLottery('หวยตัวอย่าง 2 ตัว')"><span class="flag">🎟️</span><strong>หวยตัวอย่าง 2 ตัว</strong><small>สำหรับทดลองหน้าจอ</small></button></div>
+ <div class="card" style="margin-top:14px"><h3>บันทึกรายการตัวอย่าง</h3><label for="lotteryName">ประเภทหวย</label><select id="lotteryName"><option>ลาวเวียงจันทร์</option><option>ลาวพัฒนา</option><option>หวยตัวอย่าง 3 ตัว</option><option>หวยตัวอย่าง 2 ตัว</option></select><div class="row"><div><label for="number">เลข</label><input id="number" maxlength="6" placeholder="เช่น 245"></div><div><label for="amount">จำนวน (บาท)</label><input id="amount" type="number" min="1" max="100000" placeholder="เช่น 5"></div></div><label for="kind">ประเภทรายการ</label><select id="kind"><option>เลขตรง</option><option>เลขโต๊ด</option><option>สองตัว</option><option>กลับเลข</option></select><div style="height:12px"></div><button class="primary" onclick="addEntry()">＋ เพิ่มรายการสาธิต</button><div class="notice">กรอกข้อมูลจำลองเพื่อทดสอบการคำนวณและประวัติเท่านั้น</div></div>
+ <div class="card"><h3>รายการที่กำลังบันทึก</h3><div id="entryList" class="empty">ยังไม่มีรายการ ลองเพิ่มรายการตัวอย่างด้านบน</div><div class="profile-row"><span>ยอดรวมทั้งหมด</span><strong id="entryTotal" style="color:var(--gold2)">฿0</strong></div><button class="secondary" style="width:100%;margin-top:12px" onclick="saveSlip()">บันทึกลงประวัติ</button></div>
+</section>
+<section id="history" class="view">
+ <div class="section-head"><h3>ประวัติรายการ</h3><button class="link" onclick="clearHistory()">ล้างประวัติ</button></div>
+ <div class="card"><div id="historyList" class="empty">ยังไม่มีประวัติรายการที่บันทึก</div></div>
+ <div class="notice">ประวัตินี้เก็บไว้ในเบราว์เซอร์ของอุปกรณ์นี้เท่านั้น ยังไม่ใช่ระบบฐานข้อมูลสมาชิกออนไลน์</div>
+</section>
+<section id="results" class="view">
+ <div class="section-head"><h3>ผลหวย</h3><span class="tag">ตัวอย่าง</span></div>
+ <div class="card"><h3>ผลประกาศตัวอย่าง</h3><div class="history-item"><div><strong>ลาวเวียงจันทร์</strong><p>27 ตุลาคม 2569</p></div><div class="right"><strong style="color:var(--gold2)">745</strong><p>เลขสาธิต</p></div></div><div class="history-item"><div><strong>ลาวพัฒนา</strong><p>27 ตุลาคม 2569</p></div><div class="right"><strong style="color:var(--gold2)">— — —</strong><p>ยังไม่มีผลตัวอย่าง</p></div></div><div class="notice">ผลในหน้านี้เป็นข้อมูลสาธิต ไม่ใช่ผลทางการ โปรดตรวจสอบจากแหล่งประกาศผลที่เชื่อถือได้</div></div>
+</section>
+<section id="admin" class="view">
+ <div class="section-head"><h3>หลังบ้านแอดมิน</h3><span class="tag">โหมดสาธิต</span></div>
+ <div class="card"><h3>ภาพรวมระบบ</h3><div class="stats"><div class="stat"><div class="label">รายการทั้งหมด</div><div class="value" id="adminCount">0</div></div><div class="stat"><div class="label">ยอดรวมตัวอย่าง</div><div class="value" id="adminTotal">฿0</div></div></div><label for="adminMessage">ประกาศถึงสมาชิก</label><input id="adminMessage" placeholder="พิมพ์ประกาศทดลอง"><div style="height:10px"></div><button class="primary" onclick="publishNotice()">บันทึกประกาศตัวอย่าง</button><div id="noticeResult" class="notice">ยังไม่มีประกาศใหม่</div></div>
+ <div class="card"><h3>จัดการประวัติ</h3><p class="muted" style="font-size:12px;line-height:1.7">ในต้นแบบนี้แอดมินดูยอดรวมและจัดการข้อมูลสาธิตบนอุปกรณ์ได้เท่านั้น ยังไม่มีระบบล็อกอินจริง การกำหนดสิทธิ์ หรือฐานข้อมูลส่วนกลาง</p><button class="secondary" style="width:100%" onclick="showView('history')">เปิดประวัติรายการ</button></div>
+</section>
+<section id="member" class="view">
+ <div class="section-head"><h3>บัญชีสมาชิก</h3><span class="tag">บัญชีทดลอง</span></div>
+ <div class="card"><div class="welcome"><div><h2 style="font-size:18px">สมาชิกทดลอง</h2><p>รหัสสมาชิก: DEMO-001</p></div><div class="avatar">จ.</div></div><div class="profile-row"><span class="muted">ชื่อแสดงผล</span><strong>สมาชิกบ้านจุฑาเศรษฐี</strong></div><div class="profile-row"><span class="muted">สถานะบัญชี</span><span class="tag green">ทดลองใช้งาน</span></div><div class="profile-row"><span class="muted">LINE ติดต่อ</span><strong style="color:var(--gold2)">@jutha_99</strong></div><div class="notice">เพื่อใช้งานจริง ต้องเพิ่มระบบยืนยันตัวตนอย่างปลอดภัยและนโยบายคุ้มครองข้อมูลส่วนบุคคล</div></div>
+ <div class="card"><h3>ตั้งค่าหน้าจอ</h3><button class="secondary" style="width:100%" onclick="showToast('นี่คือบัญชีทดลอง ยังไม่มีการเชื่อมต่อบัญชีจริง')">ตรวจสอบบัญชีทดลอง</button></div>
+</section>
+</main>
+<nav>
+<button class="active" data-view="home" onclick="showView('home')"><span>⌂</span>หน้าหลัก</button>
+<button data-view="lottery" onclick="showView('lottery')"><span>▤</span>รายการหวย</button>
+<button data-view="history" onclick="showView('history')"><span>◷</span>ประวัติ</button>
+<button data-view="results" onclick="showView('results')"><span>✦</span>ผลหวย</button>
+<button data-view="admin" onclick="showView('admin')"><span>☷</span>แอดมิน</button>
+</nav>
+<div id="toast" class="toast"></div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+let entries=[],history=[];
+try{entries=JSON.parse(localStorage.getItem('jutha_demo_entries')||'[]');history=JSON.parse(localStorage.getItem('jutha_demo_history')||'[]')}catch(e){}
+function money(n){return '฿'+Number(n||0).toLocaleString('th-TH',{maximumFractionDigits:2})}
+function showToast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+function showView(id){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===id));document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===id));window.scrollTo({top:0,behavior:'smooth'});render()}
+function selectLottery(name){$('lotteryName').value=name;showView('lottery');document.querySelectorAll('.lottery').forEach(b=>b.classList.remove('active'));showToast('เลือก '+name+' แล้ว')}
+function addEntry(){const name=$('lotteryName').value,num=$('number').value.trim(),amount=Number($('amount').value),kind=$('kind').value;if(!/^\d{2,6}$/.test(num)){showToast('กรุณากรอกเลข 2–6 หลัก');return}if(!Number.isFinite(amount)||amount<=0){showToast('กรุณากรอกจำนวนบาทให้ถูกต้อง');return}entries.push({id:Date.now(),name,num,amount,kind,date:new Date().toLocaleString('th-TH')});$('number').value='';$('amount').value='';persist();render();showToast('เพิ่มรายการสาธิตแล้ว')}
+function saveSlip(){if(!entries.length){showToast('ยังไม่มีรายการให้บันทึก');return}history.unshift({id:Date.now(),date:new Date().toLocaleString('th-TH'),count:entries.length,total:entries.reduce((s,e)=>s+e.amount,0),items:entries.map(e=>({...e}))});entries=[];persist();render();showToast('บันทึกลงประวัติในเครื่องแล้ว')}
+function clearHistory(){if(!history.length){showToast('ไม่มีประวัติให้ล้าง');return}if(confirm('ลบประวัติสาธิตทั้งหมดจากอุปกรณ์นี้หรือไม่?')){history=[];persist();render();showToast('ล้างประวัติแล้ว')}}
+function persist(){try{localStorage.setItem('jutha_demo_entries',JSON.stringify(entries));localStorage.setItem('jutha_demo_history',JSON.stringify(history))}catch(e){}}
+function render(){const total=entries.reduce((s,e)=>s+e.amount,0),histTotal=history.reduce((s,h)=>s+h.total,0),allTotal=total+histTotal,count=entries.length+history.reduce((s,h)=>s+h.count,0);$('statCount').textContent=count;$('statTotal').textContent=money(allTotal);$('adminCount').textContent=count;$('adminTotal').textContent=money(allTotal);$('entryTotal').textContent=money(total);
+$('entryList').innerHTML=entries.length?'<div class="table-wrap"><table><thead><tr><th>หวย / เลข</th><th>ประเภท</th><th>จำนวน</th><th></th></tr></thead><tbody>'+entries.map(e=>`<tr><td>${esc(e.name)}<br><strong>${esc(e.num)}</strong></td><td>${esc(e.kind)}</td><td>${money(e.amount)}</td><td><button class="link" onclick="removeEntry(${e.id})">ลบ</button></td></tr>`).join('')+'</tbody></table></div>':'<div class="empty">ยังไม่มีรายการ ลองเพิ่มรายการตัวอย่างด้านบน</div>';
+$('historyList').innerHTML=history.length?history.map(h=>`<div class="history-item"><div><strong>รายการบันทึก #${String(h.id).slice(-5)}</strong><p>${esc(h.date)} · ${h.count} รายการ</p></div><div class="right"><strong style="color:var(--gold2)">${money(h.total)}</strong><p>ข้อมูลสาธิต</p></div></div>`).join(''):'<div class="empty">ยังไม่มีประวัติรายการที่บันทึก</div>'}
+function removeEntry(id){entries=entries.filter(e=>e.id!==id);persist();render();showToast('ลบรายการแล้ว')}
+function publishNotice(){const m=$('adminMessage').value.trim();if(!m){showToast('กรุณาพิมพ์ประกาศก่อน');return}$('noticeResult').textContent='ประกาศตัวอย่าง: '+m;$('adminMessage').value='';showToast('บันทึกประกาศในหน้าจอนี้แล้ว')}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+render();
+</script>
+</body>
+</html>
