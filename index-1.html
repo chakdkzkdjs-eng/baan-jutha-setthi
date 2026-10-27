@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101510">
+<title>บ้านจุฑาเศรษฐี | เว็บไซต์หลัก</title>
+<style>
+:root{--bg:#0b100d;--panel:#151c17;--panel2:#1b261e;--gold:#e7c56d;--gold2:#f7e8ae;--text:#f5f6f2;--muted:#b8c0b8;--line:#354239;--green:#1d6b43;--red:#8c3a35}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at top,#203426 0,#0b100d 48%);color:var(--text);font-family:system-ui,-apple-system,"Noto Sans Thai",sans-serif;line-height:1.6}
+button,input,textarea{font:inherit}
+a{color:inherit}
+header{padding:18px 16px 12px;border-bottom:1px solid var(--line);background:#0b100de8;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}
+.head{max-width:900px;margin:auto;display:flex;align-items:center;gap:12px}
+.logo{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(145deg,#f7e8ae,#b68b2f);color:#172017;font-size:24px;font-weight:900;flex-shrink:0}
+.brand{min-width:0;flex:1}.brand h1{font-size:19px;line-height:1.25;margin:0;color:var(--gold2)}.brand p{font-size:12px;margin:3px 0 0;color:var(--muted)}
+.pill{border:1px solid #7b6936;color:var(--gold2);border-radius:999px;padding:5px 10px;font-size:12px;white-space:nowrap}
+nav{max-width:900px;margin:12px auto 0;display:flex;gap:7px;overflow:auto;padding-bottom:2px}
+nav button{flex:0 0 auto;border:1px solid var(--line);background:#131a15;color:var(--muted);padding:8px 13px;border-radius:11px;cursor:pointer}
+nav button.active{background:var(--gold);color:#172017;border-color:var(--gold);font-weight:800}
+main{max-width:900px;margin:0 auto;padding:18px 14px 95px}
+.page{display:none}.page.active{display:block}
+.hero{border:1px solid #66552c;border-radius:22px;padding:24px 20px;background:linear-gradient(135deg,#243c2b,#111813 65%,#382d16);box-shadow:0 15px 40px #0004}
+.eyebrow{color:var(--gold);font-size:12px;letter-spacing:1px;font-weight:800}
+h2{font-size:24px;line-height:1.35;margin:8px 0 10px}
+p{margin:8px 0;color:#dce2da}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+.btn{border:0;border-radius:12px;padding:11px 15px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:7px}
+.primary{background:var(--gold);color:#172017}.secondary{background:#18231b;color:var(--text);border:1px solid var(--line)}.linebtn{background:#06c755;color:white}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}
+.card{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:17px;padding:16px}
+.card h3{margin:0 0 6px;font-size:17px;color:var(--gold2)}
+.card p{font-size:14px;color:var(--muted)}
+.section-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:22px 0 10px}
+.section-title h2{font-size:20px;margin:0}
+.tag{font-size:11px;color:var(--gold2);border:1px solid #62532c;padding:3px 8px;border-radius:999px}
+.announcement{border-left:3px solid var(--gold);padding:10px 12px;background:#ffffff06;border-radius:0 10px 10px 0;margin:10px 0}
+.announcement strong{display:block;color:var(--gold2)}.announcement small{color:var(--muted)}
+form{display:grid;gap:12px}
+label{display:grid;gap:5px;font-size:14px;color:var(--muted)}
+input,textarea{width:100%;border:1px solid #465448;background:#0c120e;color:var(--text);border-radius:10px;padding:11px 12px;outline:none}
+input:focus,textarea:focus{border-color:var(--gold)}
+textarea{min-height:90px;resize:vertical}
+.notice{border:1px solid #62532c;background:#2a2517;border-radius:12px;padding:12px;color:#f4e5b1;font-size:13px;margin:12px 0}
+.status{font-size:13px;color:#9ce4b3;min-height:22px}
+.history-item{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;border-bottom:1px solid var(--line);padding:12px 0}
+.history-item:last-child{border-bottom:0}.history-item strong{display:block}.history-item small{color:var(--muted)}
+.delete{background:transparent;color:#f1a6a0;border:1px solid #6e3935;border-radius:9px;padding:5px 9px}
+footer{border-top:1px solid var(--line);text-align:center;color:var(--muted);padding:24px 12px;font-size:12px}
+.bottom-line{position:fixed;right:14px;bottom:14px;z-index:8;box-shadow:0 8px 25px #0008}
+.empty{color:var(--muted);text-align:center;padding:24px 8px}
+@media(min-width:650px){.hero{padding:32px}.hero h2{font-size:30px}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:420px){.pill{display:none}.grid{grid-template-columns:1fr}.brand h1{font-size:17px}h2{font-size:22px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="head">
+    <div class="logo">จ</div>
+    <div class="brand"><h1>บ้านจุฑาเศรษฐี</h1><p>ศูนย์ข้อมูลข่าวสารและสมาชิก</p></div>
+    <span class="pill">เว็บไซต์หลัก</span>
+  </div>
+  <nav aria-label="เมนูหลัก">
+    <button class="active" data-page="home">หน้าหลัก</button>
+    <button data-page="news">ประกาศ</button>
+    <button data-page="member">สมาชิก</button>
+    <button data-page="history">ประวัติรายการ</button>
+    <button data-page="contact">ติดต่อเรา</button>
+  </nav>
+</header>
+<main>
+  <section class="page active" id="home">
+    <div class="hero">
+      <div class="eyebrow">ยินดีต้อนรับ</div>
+      <h2>บ้านจุฑาเศรษฐี</h2>
+      <p>ติดตามประกาศ ข่าวสาร และข้อมูลติดต่อได้จากเว็บไซต์นี้ ใช้งานง่ายบนโทรศัพท์มือถือ</p>
+      <div class="actions">
+        <button class="btn primary" data-goto="news">📢 ดูประกาศ</button>
+        <button class="btn secondary" data-goto="member">👤 หน้าสมาชิก</button>
+        <a class="btn linebtn" href="https://line.me/R/ti/p/@jutha_99" target="_blank" rel="noopener">LINE @jutha_99</a>
+      </div>
+    </div>
+    <div class="section-title"><h2>เมนูด่วน</h2><span class="tag">เลือกใช้งาน</span></div>
+    <div class="grid three">
+      <div class="card"><h3>📢 ประกาศ</h3><p>อ่านข่าวสารและแจ้งข้อมูลล่าสุดจากผู้ดูแลเว็บไซต์</p><button class="btn secondary" data-goto="news">เปิดประกาศ</button></div>
+      <div class="card"><h3>👤 สมาชิก</h3><p>บันทึกชื่อและข้อมูลแสดงผลไว้บนอุปกรณ์นี้</p><button class="btn secondary" data-goto="member">ไปหน้าสมาชิก</button></div>
+      <div class="card"><h3>🗂️ ประวัติรายการ</h3><p>บันทึกรายการส่วนตัวเพื่อกลับมาดูภายหลัง</p><button class="btn secondary" data-goto="history">ดูประวัติ</button></div>
+    </div>
+    <div class="section-title"><h2>ประกาศล่าสุด</h2><button class="btn secondary" data-goto="news">ดูทั้งหมด</button></div>
+    <div id="homeNews"></div>
+  </section>
+
+  <section class="page" id="news">
+    <div class="section-title"><h2>📢 ประกาศและข่าวสาร</h2><span class="tag">ข่าวสาร</span></div>
+    <div class="card">
+      <div class="announcement"><strong>ยินดีต้อนรับสู่บ้านจุฑาเศรษฐี</strong><small>ประกาศจากเว็บไซต์</small><p>เว็บไซต์นี้จัดทำขึ้นเพื่อรวบรวมข่าวสาร ประกาศ และช่องทางติดต่ออย่างเป็นระเบียบ</p></div>
+      <div class="announcement"><strong>ช่องทางติดต่อ LINE</strong><small>ข้อมูลติดต่อ</small><p>หากต้องการสอบถามข้อมูลเพิ่มเติม สามารถกดปุ่ม LINE ในเว็บไซต์ได้</p></div>
+      <div class="announcement"><strong>โปรดตรวจสอบข้อมูลก่อนดำเนินการ</strong><small>แจ้งเตือนสมาชิก</small><p>โปรดอ่านประกาศให้ครบถ้วน และติดต่อผู้ดูแลผ่านช่องทางที่ระบุเมื่อมีข้อสงสัย</p></div>
+    </div>
+    <p class="notice">หมายเหตุ: ข้อความประกาศตัวอย่างนี้แก้ไขได้ในไฟล์ index.html โดยผู้ดูแลเว็บไซต์</p>
+  </section>
+
+  <section class="page" id="member">
+    <div class="section-title"><h2>👤 หน้าสำหรับสมาชิก</h2><span class="tag">ข้อมูลส่วนตัว</span></div>
+    <div class="notice">รุ่นเริ่มต้นนี้เป็นหน้าสมาชิกแบบทดลอง ข้อมูลจะบันทึกไว้เฉพาะเบราว์เซอร์บนอุปกรณ์นี้เท่านั้น ไม่ใช่ระบบบัญชีออนไลน์ที่ปลอดภัย และไม่ควรกรอกข้อมูลลับหรือรหัสผ่าน</div>
+    <div class="card">
+      <h3>ข้อมูลสมาชิก</h3>
+      <form id="memberForm">
+        <label>ชื่อที่ต้องการแสดง<input id="memberName" maxlength="60" placeholder="เช่น สมาชิกบ้านจุฑาเศรษฐี" required></label>
+        <label>ข้อความแนะนำตัว (ไม่บังคับ)<textarea id="memberBio" maxlength="250" placeholder="เขียนข้อความสั้น ๆ"></textarea></label>
+        <button class="btn primary" type="submit">บันทึกข้อมูลบนอุปกรณ์นี้</button>
+        <div class="status" id="memberStatus" aria-live="polite"></div>
+      </form>
+      <div class="actions"><button class="btn secondary" id="clearMember" type="button">ลบข้อมูลสมาชิกจากอุปกรณ์นี้</button></div>
+    </div>
+  </section>
+
+  <section class="page" id="history">
+    <div class="section-title"><h2>🗂️ ประวัติรายการ</h2><span class="tag">บันทึกส่วนตัว</span></div>
+    <div class="notice">รายการด้านล่างเก็บไว้ในเบราว์เซอร์เครื่องนี้เท่านั้น หากล้างข้อมูลเว็บไซต์หรือเปลี่ยนเครื่อง รายการอาจหายไป และผู้ดูแลเว็บไซต์ไม่ได้รับข้อมูลนี้</div>
+    <div class="card">
+      <h3>เพิ่มรายการบันทึก</h3>
+      <form id="historyForm">
+        <label>หัวข้อรายการ<input id="historyTitle" maxlength="100" placeholder="เช่น สอบถามข้อมูล / ติดตามประกาศ" required></label>
+        <label>รายละเอียด (ไม่บังคับ)<textarea id="historyNote" maxlength="500" placeholder="รายละเอียดเพิ่มเติม"></textarea></label>
+        <button class="btn primary" type="submit">＋ เพิ่มลงประวัติ</button>
+        <div class="status" id="historyStatus" aria-live="polite"></div>
+      </form>
+    </div>
+    <div class="section-title"><h2>รายการที่บันทึกไว้</h2><button class="btn secondary" id="clearHistory" type="button">ล้างทั้งหมด</button></div>
+    <div class="card" id="historyList"></div>
+  </section>
+
+  <section class="page" id="contact">
+    <div class="section-title"><h2>💬 ติดต่อบ้านจุฑาเศรษฐี</h2></div>
+    <div class="card">
+      <h3>ติดต่อผ่าน LINE</h3>
+      <p>แตะปุ่มด้านล่างเพื่อเปิด LINE และติดต่อบัญชีที่ระบุ</p>
+      <div class="actions"><a class="btn linebtn" href="https://line.me/R/ti/p/@jutha_99" target="_blank" rel="noopener">เปิด LINE @jutha_99</a><button class="btn secondary" id="copyLine" type="button">คัดลอก LINE ID</button></div>
+      <div class="status" id="contactStatus" aria-live="polite"></div>
+    </div>
+    <p class="notice">ก่อนเผยแพร่ โปรดตรวจสอบว่า LINE ID และข้อมูลประกาศถูกต้องตามที่ต้องการ</p>
+  </section>
+</main>
+<footer>© <span id="year"></span> บ้านจุฑาเศรษฐี · เว็บไซต์สำหรับมือถือ</footer>
+<a class="btn linebtn bottom-line" href="https://line.me/R/ti/p/@jutha_99" target="_blank" rel="noopener">LINE ติดต่อเรา</a>
+<script>
+const $ = s => document.querySelector(s);
+const $$ = s => document.querySelectorAll(s);
+function showPage(id){
+  $$('.page').forEach(p=>p.classList.toggle('active',p.id===id));
+  $$('nav button[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===id));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+$$('nav button[data-page]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+$$('[data-goto]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.goto)));
+$('#year').textContent=new Date().getFullYear();
+const announcements=[
+ {title:'ยินดีต้อนรับสู่บ้านจุฑาเศรษฐี',text:'เว็บไซต์นี้รวบรวมข่าวสาร ประกาศ และช่องทางติดต่อ',date:'ประกาศจากเว็บไซต์'},
+ {title:'ช่องทางติดต่อ LINE',text:'สอบถามข้อมูลเพิ่มเติมผ่านปุ่ม LINE ในเว็บไซต์',date:'ข้อมูลติดต่อ'}
+];
+$('#homeNews').innerHTML=announcements.map(a=>`<div class="announcement"><strong>${a.title}</strong><small>${a.date}</small><p>${a.text}</p></div>`).join('');
+function readJSON(key,fallback){try{return JSON.parse(localStorage.getItem(key))??fallback}catch(e){return fallback}}
+function safeText(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function loadMember(){const m=readJSON('jutha_member_v1',{name:'',bio:''});$('#memberName').value=m.name||'';$('#memberBio').value=m.bio||''}
+$('#memberForm').addEventListener('submit',e=>{e.preventDefault();const m={name:$('#memberName').value.trim(),bio:$('#memberBio').value.trim()};localStorage.setItem('jutha_member_v1',JSON.stringify(m));$('#memberStatus').textContent='บันทึกข้อมูลไว้บนอุปกรณ์นี้แล้ว';});
+$('#clearMember').addEventListener('click',()=>{if(confirm('ต้องการลบข้อมูลสมาชิกจากอุปกรณ์นี้หรือไม่?')){localStorage.removeItem('jutha_member_v1');loadMember();$('#memberStatus').textContent='ลบข้อมูลแล้ว';}});
+function renderHistory(){const items=readJSON('jutha_history_v1',[]);const box=$('#historyList');if(!items.length){box.innerHTML='<div class="empty">ยังไม่มีรายการที่บันทึกไว้</div>';return;}box.innerHTML=items.map((it,i)=>`<div class="history-item"><div><strong>${safeText(it.title)}</strong><small>${safeText(it.date)}</small>${it.note?`<p>${safeText(it.note)}</p>`:''}</div><button class="delete" data-delete="${i}" type="button">ลบ</button></div>`).join('');box.querySelectorAll('[data-delete]').forEach(b=>b.addEventListener('click',()=>{const list=readJSON('jutha_history_v1',[]);list.splice(Number(b.dataset.delete),1);localStorage.setItem('jutha_history_v1',JSON.stringify(list));renderHistory();}));}
+$('#historyForm').addEventListener('submit',e=>{e.preventDefault();const list=readJSON('jutha_history_v1',[]);list.unshift({title:$('#historyTitle').value.trim(),note:$('#historyNote').value.trim(),date:new Date().toLocaleString('th-TH')});localStorage.setItem('jutha_history_v1',JSON.stringify(list));$('#historyForm').reset();$('#historyStatus').textContent='เพิ่มรายการแล้ว';renderHistory();});
+$('#clearHistory').addEventListener('click',()=>{if(confirm('ต้องการลบประวัติทั้งหมดจากอุปกรณ์นี้หรือไม่?')){localStorage.removeItem('jutha_history_v1');renderHistory();}});
+$('#copyLine').addEventListener('click',async()=>{try{await navigator.clipboard.writeText('@jutha_99');$('#contactStatus').textContent='คัดลอก @jutha_99 แล้ว';}catch(e){$('#contactStatus').textContent='LINE ID: @jutha_99';}});
+loadMember();renderHistory();
+</script>
+</body>
+</html>
